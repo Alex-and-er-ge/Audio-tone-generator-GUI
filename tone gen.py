@@ -67,7 +67,7 @@ def point_amount():                 # Button func
     
     p_points = int(p_entry.get())   # Var for frequency
     p_points2 = int(p_entry2.get()) # Var for time
-    generator = ToneGenerator()     # Generator start 
+    generator = ToneGenerator()     # Create an instance of the ToneGenerator class 
 
     amplitude = 0.50                # Amplitude of the waveform
     step_duration = p_points2       # Time (seconds) to play at each step
@@ -77,7 +77,7 @@ def point_amount():                 # Button func
     print("Playing tone at {0:0.2f} Hz".format(frequency))
     generator.play(frequency, step_duration, amplitude)    # Start to play
 
-root = Tk()
+root = Tk()                         # Create the main window
 root.title("Playing sinus tone")
 
 p_label = Label(text="Frequency, Hz:")
@@ -92,7 +92,7 @@ p_entry.grid(row=0, column=1, padx=5, pady=5)
 p_entry2 = Entry()
 p_entry2.grid(row=1, column=1, padx=5, pady=5)
 
-display_button = Button(text="Play", command=point_amount)
+display_button = Button(text="Play", command=point_amount)       # Create the button
 display_button.grid(row=3, column=0, padx=5, pady=5, sticky="e")
 
 p_label = Label(text="We can hear on the " )
@@ -101,7 +101,7 @@ p_label = Label(text="frequency from 20 to 20000 hz" )
 # the sound apparature works on this interval of frequency too
 p_label.grid(row=4, column=1, sticky="w")
 
-root.mainloop()
+root.mainloop()         # Start the main loop
 
 
 
